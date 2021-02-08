@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   version: 1.0.2
-  title: user serive
+  title: user serive updated
 servers:
   - url: 'http://localhost:3000'
 paths:
