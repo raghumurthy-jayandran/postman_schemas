@@ -1,12 +1,16 @@
 openapi: 3.0.0
+security:
+    $ref:''
 info:
   version: 1.0.0
   title: user serive updated
 servers:
-  - url: 'http://localhost:3000'
+  - url: 'https://localhost:3000'
 paths:
   /user:
     get:
+      security:
+          - $ref
       summary: 'Sample endpoint: Returns details about a particular user'
       operationId: listUser
       tags:
@@ -38,6 +42,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
 components:
+  security:
   schemas:
     User:
       type: object
