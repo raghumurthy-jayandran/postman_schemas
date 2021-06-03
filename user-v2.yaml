@@ -1,6 +1,6 @@
 openapi: 3.0.0
 security:
-    $ref:''
+    - apiKey1: []
 info:
   version: 1.0.0
   title: user serive updated
@@ -10,7 +10,7 @@ paths:
   /user:
     get:
       security:
-          - $ref
+          - apiKey1: []
       summary: 'Sample endpoint: Returns details about a particular user'
       operationId: listUser
       tags:
