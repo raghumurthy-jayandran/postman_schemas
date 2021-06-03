@@ -1,6 +1,4 @@
 openapi: 3.0.0
-security:
-    - apiKey1: []
 info:
   version: 1.0.0
   title: user serive updated
@@ -42,7 +40,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
 components:
-  security:
+  securitySchemes:
+      BasicAuth:
+        type: http
+        scheme: basic
   schemas:
     User:
       type: object
