@@ -1,1 +1,97 @@
-test6
+openapi: 3.0.0
+info:
+  version: 1.0.2
+  title: ESOP Simulator
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /esop/exercise_estimate:
+    get:
+      summary: 'An estimate about your cost and taxes when exercisng your ESOP units.'
+      operationId: getCostForExercising
+      parameters: 
+        - name: exercise_price
+          in: query
+          description: The fixed price per share of an option you can buy. Represented using the currency code referred in exercise_currency_code parameter.
+          required: true
+          schema:
+            type: number
+            format: float
+            minimum: 0.0001    
+        - name: exercisable_units
+          in: query
+          description: Option grants that you can exercise as of today.
+          required: true
+          schema:
+            type: integer
+            format: int32
+            minimum: 1
+        - name: fvm_price
+          in: query
+          description: Fair market value of a share. Represented using the currency code referred in exercise_currency_code parameter.
+          required: true
+          schema:
+              type: number
+              format: float
+              minimum: 0.0001
+        - name: ctc
+          in: query
+          description: Cost to the company. Represented in INR.
+          required: true
+          schema:
+              type: number
+              format: float
+              minimum: 1
+        - name: exercise_currency_code
+          in: query
+          description: The currency code (ISO 4217 format) in which the option is exercised.
+          required: true
+          schema:
+              type: string
+              maxLength: 3
+              minLength: 3        
+      responses:
+        '200':
+          description: 'Returns an estimate object describing your cost and taxes'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExerciseEstimate'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    ExerciseEstimate:
+      type: object
+      required:
+        - exercise_cost
+        - tds_amount
+        - currency_code
+      properties:
+        exercise_cost:
+          type: number
+          format: float
+          minimum: 0
+        tds_amount:
+          type: number
+          format: float
+          minimum: 0
+        currency_code:
+          type: string
+          minLength: 3
+          maxLength: 3
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
