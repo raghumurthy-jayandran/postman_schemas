@@ -30,12 +30,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: 'user_components.yaml#/components/schemas/User'
+                $ref: 'https://raw.githubusercontent.com/raghumurthy-jayandran/postman_schemas/dev/user_components.yaml#/components/schemas/User'
         default:
           description: Unexpected error
           content:
             application/json:
               schema:
-                $ref: 'user_components.yaml#/components/schemas/Error'
+                $ref: 'https://raw.githubusercontent.com/raghumurthy-jayandran/postman_schemas/dev/user_components.yaml#/components/schemas/Error'
 security:
   - BasicAuth: []
