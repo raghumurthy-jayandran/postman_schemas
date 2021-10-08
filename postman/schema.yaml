@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   version: 'edited'
-  title: 'User AdfdfdfPIkjvkjv updating'
+  title: 'User AdfdfdfPIkjvkjv updating new update'
 servers:
   - url: 'localhost:3000'
 paths:
