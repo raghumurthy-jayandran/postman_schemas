@@ -7,7 +7,7 @@ servers:
 paths:
   /esop/exercise_estimate:
     get:
-      summary: 'An estimate about your cost and taxes when exercisng your ESOP units.'
+      summary: 'An estimate about your cost and taxes when exercisng your ESOP units. '
       operationId: getCostForExercising
       parameters: 
         - name: exercise_price
