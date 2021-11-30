@@ -1,0 +1,175 @@
+{
+    "info": {
+        "_postman_id": "1f05a393-2037-4b85-9c67-5d64ffb78961",
+        "name": "User API - base url",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Sample endpoint: Returns details about a particular user",
+            "id": "00c37cac-51d9-4f48-9dd9-8aaf1dbad628",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{baseUrl}}/user?id=37743897",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "user"
+                    ],
+                    "query": [
+                        {
+                            "key": "id",
+                            "value": "37743897",
+                            "description": "(Required) ID of the user"
+                        }
+                    ],
+                    "variable": [
+                        {
+                            "id": "33d8dcd0-46e9-403c-8b81-5bdfba0940ae",
+                            "key": "BASE_URI",
+                            "value": "{{BASE_URI}}",
+                            "description": "Server base URI"
+                        }
+                    ]
+                }
+            },
+            "response": [
+                {
+                    "id": "927ea36f-db37-4f0e-bd34-395e4c699502",
+                    "name": "Sample response: Details about a user by ID",
+                    "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/user?id=37743897",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "user"
+                            ],
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "37743897"
+                                }
+                            ],
+                            "variable": [
+                                {
+                                    "key": "BASE_URI",
+                                    "value": "{{BASE_URI}}",
+                                    "description": "Server base URI"
+                                }
+                            ]
+                        }
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "json",
+                    "header": [
+                        {
+                            "disabled": false,
+                            "description": "A link to the next page of responses",
+                            "key": "x-next",
+                            "value": "aliqua enim incididunt amet"
+                        },
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": "{\n \"id\": 56987373,\n \"name\": \"veniam commodo\",\n \"tag\": \"dolore minim E\"\n}"
+                },
+                {
+                    "id": "555af619-94fc-4d8f-bd6c-a8a29fc60d91",
+                    "name": "Unexpected error",
+                    "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/user?id=37743897",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "user"
+                            ],
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "37743897"
+                                }
+                            ],
+                            "variable": [
+                                {
+                                    "key": "BASE_URI",
+                                    "value": "{{BASE_URI}}",
+                                    "description": "Server base URI"
+                                }
+                            ]
+                        }
+                    },
+                    "status": "Internal Server Error",
+                    "code": 500,
+                    "_postman_previewlanguage": "json",
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": "{\n \"code\": 86168733,\n \"message\": \"sit dolor\"\n}"
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "basic",
+        "basic": [
+            {
+                "key": "username",
+                "value": "<Basic Auth Username>",
+                "type": "string"
+            },
+            {
+                "key": "password",
+                "value": "<Basic Auth Password>",
+                "type": "string"
+            }
+        ]
+    },
+    "variable": [
+        {
+            "id": "d9c9cdd1-87b0-4185-9732-30355038d32d",
+            "key": "BASE_URI",
+            "value": "http://example.com",
+            "type": "any",
+            "description": "Server base URI"
+        },
+        {
+            "id": "dc3ace1f-5cd4-4fb9-9691-6276115c7088",
+            "key": "baseUrl",
+            "value": "{{BASE_URI}}/api",
+            "type": "string"
+        }
+    ]
+}
