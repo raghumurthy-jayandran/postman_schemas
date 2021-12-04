@@ -5,7 +5,7 @@
     "title": "new api",
     "description": "Enter description about your API here",
     "contact": {
-      "name": "Your name - 3"
+      "name": "Your name - 5"
     }
   },
   "host": "localhost:3000",
