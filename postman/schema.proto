@@ -3,7 +3,7 @@ syntax = "proto3";
 package com.book;
 
 message Book {
-  int64 isbn = 1;
+  int64 isbnUpdated = 1;
   string titles = 2;
   string authors = 3;
 }
