@@ -5,7 +5,7 @@ package com.book;
 message Book {
   int64 isbnUpdateds = 1;
   string title = 2;
-  string authors = 3;
+  string author = 3;
 }
 
 message GetBookRequest {
