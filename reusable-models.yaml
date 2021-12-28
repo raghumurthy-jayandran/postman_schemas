@@ -19,7 +19,7 @@ components:
         - codes
         - message
       properties:
-        codes:
+        codess:
           type: integer
           format: int32
         message:
