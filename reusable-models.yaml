@@ -16,10 +16,10 @@ components:
     Error:
       type: object
       required:
-        - code
+        - codes
         - message
       properties:
-        code:
+        codes:
           type: integer
           format: int32
         message:
