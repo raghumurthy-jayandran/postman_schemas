@@ -16,7 +16,7 @@ components:
     Error:
       type: object
       required:
-        - codes
+        - codess
         - message
       properties:
         codess:
