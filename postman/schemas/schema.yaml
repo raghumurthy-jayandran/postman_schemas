@@ -1,13 +1,15 @@
-openapi: 3.0.0
+openapi: 3.0.1
 info:
   version: '1'
-  title: 'User API  - 1'
+  title: 'OAS 3.0'
+  license:
+    name: MIT
 servers:
   - url: 'localhost:3000'
 paths:
   /user:
     get:
-      summary: 'Sample endpoint: Returns details about a particular users updated'
+      summary: 'Sample endpoint: Returns details about a particular user'
       operationId: listUser
       tags:
         - user
@@ -19,6 +21,13 @@ paths:
           schema:
             type: integer
             format: int32
+        - name: dob
+          in: query
+          description: ID of the user
+          required: true
+          schema:
+            type: integer
+            format: int32    
       responses:
         '200':
           description: 'Sample response: Details about a user by ID'
